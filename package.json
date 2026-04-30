@@ -1,0 +1,16 @@
+{
+  "name": "counter-app",
+  "version": "1.0.0",
+  "description": "Simple counter app with graceful shutdown",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "triotech",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "ws": "^8.20.0"
+  }
+}
