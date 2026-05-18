@@ -1,0 +1,19 @@
+
+apiVersion: argoproj.io/v1alpha1   # API group for ArgoCD resources
+kind: Application                  # Resource type is "Application"
+metadata:
+  name: online-shop-app            # Name of this ArgoCD application
+  namespace: argocd                # Must be created in the 'argocd' namespace
+spec:
+  project: default                 # ArgoCD Project (logical grouping of apps)
+  source:
+    repoURL: https://github.com/triotechltd/new-pipeline-test.git   # Git repo containing manifests
+    targetRevision: main           # Git branch or tag (e.g., main, dev, release-1.0)
+    path: declarative_approach/online_shop   # Path inside repo where manifests live
+  destination:
+    server: https://172.31.33.57:33893  # Target cluster API
+    namespace: default             # Namespace in which to deploy the app
+  syncPolicy:                      # Defines how ArgoCD syncs the app
+    automated:                     # Enable auto-sync
+      prune: true                  # Delete resources removed from Git
+      selfHeal: true               # Fix drift if resources are changed manually
