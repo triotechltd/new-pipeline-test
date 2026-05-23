@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: chai-app
-        image: chai-app=triotechltd/myapp:v1.0.0
+        image: triotechltd/myapp:v1.0.0
         ports:
         - containerPort: 80
         env:
