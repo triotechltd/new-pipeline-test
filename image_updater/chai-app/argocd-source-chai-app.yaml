@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - chai-app=triotechltd/myapp:v1.0.0
